@@ -122,6 +122,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'django.contrib.flatpages',
     'south',
+
+    'main',
 )
 
 # A sample logging configuration. The only tangible logging
