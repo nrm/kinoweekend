@@ -2,4 +2,4 @@
 *.sql
 static/*
 */static/*
-
+gunicorn_local.sh
