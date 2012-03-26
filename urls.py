@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^$', 'main.views.index', name='home'),
+    url(r'^news/$', 'news.views.news', name='news'),
 )
 
 if DEBUG:

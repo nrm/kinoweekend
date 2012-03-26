@@ -124,6 +124,7 @@ INSTALLED_APPS = (
     'south',
 
     'main',
+    'news',
 )
 
 # A sample logging configuration. The only tangible logging

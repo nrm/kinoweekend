@@ -1,4 +1,4 @@
-{% extends 'layouts/simple.html' %}
+{% include "layouts/navbar.html" with active_tab='home' %}
 
 {% block body %}
 {% autoescape off %}
@@ -7,6 +7,7 @@
     {% for video in videos %}
         <li>
             <p> {{ video.name }} </p>
+            <p> {{ request.path }} URLs </p>
             <br/>
             <p> {{ video.teaser }}</p>
             <bd>
