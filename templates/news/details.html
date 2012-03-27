@@ -1,0 +1,31 @@
+{% extends 'layouts/simple.html' %}
+
+
+{% block hero-unit %}
+{% endblock %}
+
+{% block body %}
+    <div class="body">
+        {% if post %}
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.publish_at}}</p>
+            <br>
+            <p>{{ post.body|safe }}</p>
+        {% endif %}
+
+        {% with post.get_previous_by_publish_at as prev %}
+            {% if prev and prev.is_visible %}
+            <a href="{{ prev.get_absolute_url }}">
+                &lt; {{ prev }}</a>
+            {% endif %}
+        {% endwith %}
+        <a href="{% url home %}">Back to news list</a>
+        {% with post.get_next_by_publish_at as next %}
+            {% if next and next.is_visible %}
+            <a href="{{ next.get_absolute_url }}">
+                {{ next }} &gt;</a>
+            {% endif %}
+        {% endwith %}
+    </div>
+{% endblock %}
+

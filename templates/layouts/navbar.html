@@ -13,7 +13,8 @@
           <a class="brand" href="#">Kinoweekend</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="{% if active_tab == 'home' %} active{% endif %}"><a href="#">Home</a></li>
+                <!--<li class="{% if active_tab == 'home' %} active{% endif %}"><a href="#">Home</a></li>-->
+              <li id="home-link"><a href="{% url home %}">Home</a></li>
               <li class="{% if active_tab == 'news' %} active{% endif %}"><a href="#">News</a></li>
               <li><a href="#">History</a></li>
               <li><a href="#about">About</a></li>

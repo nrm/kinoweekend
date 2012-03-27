@@ -50,14 +50,8 @@ class Post(TimeStampedActivate):
     #tags = TaggableManager()
     objects = PostManager()
 
-    #def get_absolute_url(self):
-    #    return "/news/%s/" % self.slug
-
     @models.permalink
     def get_absolute_url(self):
-        #return ('main.views.index', self.slug)
-        #return ('post', self.slug)
-        # return "/main/%s/" % self.slug
         return ('post', {}, {'slug': self.slug})
 
     def is_visible(self):
