@@ -572,6 +572,42 @@ cite {
 .label-inverse:hover {
   background-color: #1a1a1a;
 }
+.article {
+  border-bottom: 1px lightgray solid;
+  margin: 20px 0px 20px 0px;
+  zoom: 1;
+}
+.article:before, .article:after {
+  display: table;
+  content: "";
+  zoom: 1;
+}
+.article:after {
+  clear: both;
+}
+.article-content {
+  margin: 5px 0px 20px 15px;
+}
+.article-header {
+  font-size: 16px;
+  font-weight: bold;
+}
+.article-header a {
+  text-decoration: none;
+  color: green;
+  padding: 2px;
+}
+.article-header a:hover {
+  text-decoration: underline;
+  background-color: #FFFACD;
+}
+.article-description {
+  padding: 0px 0px 0px 2px;
+}
+.header-comment-count {
+  font-size: 12px;
+  font-weight: normal;
+}
 .badge {
   padding: 1px 9px 2px;
   font-size: 12.025px;

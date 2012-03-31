@@ -4,9 +4,8 @@ from news.models import Post
 from django.template import RequestContext
 
 def index(request):
-    posts = get_list_or_404(Post.objects.get_visible())[0:5]
 
-    return render_to_response('main/index.html', {'posts': posts},
+    return render_to_response('news/index.html', {},
             context_instance=RequestContext(request))
 
 def news(request):

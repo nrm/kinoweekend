@@ -16,10 +16,10 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^works/', 'main.views.index', name='works'),
-    url(r'^$', 'news.views.news', name='home'),
+    url(r'^$', 'news.views.index', name='home'),
     url(r'^news/$', 'news.views.news', name='news'),
     url(r'^news/(?P<slug>[-\w]+)/$', 'news.views.details', name='post'),
+    url(r'^works/', 'main.views.index', name='works'),
 
 )
 

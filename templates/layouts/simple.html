@@ -2,21 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% block page_title %} Main Title template {% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Ilya Bezrukov">
 
     <!-- Le styles -->
     <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+     {% comment %}
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
     </style>
-    {% comment %}
-    <link href="{{ STATIC_URL }}lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    {% endcomment %}
+     {% endcomment %}
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -30,8 +29,8 @@
     <link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}images/apple-touch-icon-114x114.png">
     {% block styles %}{% endblock %}
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <!--<script src="{{ STATIC_URL }}lib/bootstrap/js/tests/vendor/jquery.js"></script>-->
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+    <script src="{{ STATIC_URL }}js/jquery-1.7.1.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>    
     <script type="text/javascript">
 
@@ -50,40 +49,61 @@
 
   <body>
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Kinoweekend</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-                <li id="home-link"><a href="#"><i class="icon-home icon-white"></i></a></li>
-                <li id="news-link"><a href="{% url news %}"><i class="i"></i>News</a></li>
-                <li id="works-link"><a href="{% url works %}">Works</a></li>
-    {% comment %}
-              <li class="{% if active_tab == 'news' %} active{% endif %}"><a href="#">News</a></li>
-    {% endcomment %}
-              <li><a href="#">History</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#contact">Forum</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+     <header class="container">
+     <div class="content">
+       <div class="page-header pull-right">
+           <h1>КиноweekenD <small>НеОфициальный несайт кинофестиваля</small></h1>
+       </div>
+     </div>
+     </header>
 
     <div class="container">
 
-      <h1>Bootstrap starter template</h1>
-      <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+        {% block navbar %}
+            {% include "layouts/navbar" %}
+        {% endblock %}
 
+  <div class="row">
+
+      <div class="span2">
+          <ul class="thumbnails">
+              <li>
+                <div class="thumbnail">
+                  <img src="http://placehold.it/140x80" alt="">
+                  <h5>Партнеры</h5>
+                  <p>Thumbnail caption right here...</p>
+                </div>
+              </li>
+          </ul>
+          ...
+      </div>
+
+  <div class="span8">
       {% block body %}
+      <p>Test</p>
       {% endblock %}
+    </div>
+
+    <div class="span2">
+          <ul class="thumbnails">
+              <li>
+                <div class="thumbnail">
+                  <img src="http://placehold.it/140x80" alt="">
+                  <h5>Спонсоры</h5>
+                  <p>Thumbnail caption right here...</p>
+                </div>
+              </li>
+          </ul>
+        ...
+    </div>
+    </div>
+
+   <footer>
+       <p>
+           Content and Videos &copy; 2012 kinoweekend 
+       </p>
+   </footer>
+
     </div> <!-- /container -->
 
 
@@ -91,21 +111,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
-    {% comment %}
-    <script src="{{ STATIC_URL }}lib/bootstrap/js/tests/vendor/jquery.js"></script>
-    <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap-transition.js"></script>
-    <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap-alert.js"></script>
-    <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap-modal.js"></script>
-    <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap-dropdown.js"></script>
-    <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap-scrollspy.js"></script>
-    <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap-tab.js"></script>
-    <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap-tooltip.js"></script>
-    <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap-popover.js"></script>
-    <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap-button.js"></script>
-    <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap-collapse.js"></script>
-    <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap-carousel.js"></script>
-    <script src="{{ STATIC_URL }}lib/bootstrap/js/bootstrap-typeahead.js"></script>
     {% block script %}{% endblock %}
-    {% endcomment %}
   </body>
 </html>
