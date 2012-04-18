@@ -1,7 +1,7 @@
 from fabric.api import *
 from os.path import join
 
-env.hosts = ['kinoweek.mooo.com']
+env.hosts = ['kinoweekend.org']
 
 PROJECT_NAME = 'kinoweekend'
 PROJECT_DIR = join('/home/bezrukov/Envs/%s'%PROJECT_NAME, 'source')
@@ -22,6 +22,7 @@ def deploy():
         run_in_virtualenv('pip install -r requirements.txt')
         run_in_virtualenv('python manage.py syncdb')
         run_in_virtualenv('python manage.py migrate')
+        run_in_virtualenv('python manage.py collectstatic --noinput')
         #run_in_virtualenv('./manage.py clear_cache')
         run('sudo supervisorctl -c /etc/supervisor/supervisord.conf restart %s'%PROJECT_NAME)
         run('sudo supervisorctl -c /etc/supervisor/supervisord.conf status %s'%PROJECT_NAME)
