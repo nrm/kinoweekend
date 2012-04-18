@@ -3,3 +3,4 @@
 static/*
 */static/*
 gunicorn_local.sh
+local_settings.py
