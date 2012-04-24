@@ -36,7 +36,7 @@ LANGUAGE_CODE = 'ru-RU'
 ugettext = lambda s: s
 
 LANGUAGES = (
-    ('ru', ugettext('Русский')),
+    ('ru', ugettext(u'Русский')),
     ('en', ugettext('English')),
 )
 
@@ -108,7 +108,7 @@ SECRET_KEY = 'cw^$i&dgeidqc6qvvbbrugd@s9l9#buq3w%ub0rhc$gd$kf-ud'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+#    'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -145,6 +145,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'south',
     'localeurl',
+    'nani',
 
     'home',
     'main',

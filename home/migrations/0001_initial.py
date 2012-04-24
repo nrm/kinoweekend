@@ -8,26 +8,40 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         
-        # Adding model 'Post'
-        db.create_table('news_post', (
+        # Adding model 'DjangoApplicationTranslation'
+        db.create_table('home_djangoapplication_translation', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('created', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
-            ('modified', self.gf('django.db.models.fields.DateTimeField')(auto_now=True, blank=True)),
-            ('active', self.gf('django.db.models.fields.BooleanField')(default=False)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'])),
-            ('slug', self.gf('django.db.models.fields.SlugField')(max_length=50, db_index=True)),
-            ('excerpt', self.gf('django.db.models.fields.TextField')(blank=True)),
-            ('body', self.gf('django.db.models.fields.TextField')()),
-            ('publish_at', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime(2012, 4, 24, 18, 6, 40, 627277))),
+            ('teaser', self.gf('django.db.models.fields.TextField')(blank=True)),
+            ('description', self.gf('django.db.models.fields.TextField')(blank=True)),
+            ('language_code', self.gf('django.db.models.fields.CharField')(max_length=15, db_index=True)),
+            ('master', self.gf('django.db.models.fields.related.ForeignKey')(related_name='translations', null=True, to=orm['home.DjangoApplication'])),
         ))
-        db.send_create_signal('news', ['Post'])
+        db.send_create_signal('home', ['DjangoApplicationTranslation'])
+
+        # Adding unique constraint on 'DjangoApplicationTranslation', fields ['language_code', 'master']
+        db.create_unique('home_djangoapplication_translation', ['language_code', 'master_id'])
+
+        # Adding model 'DjangoApplication'
+        db.create_table('home_djangoapplication', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('author', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'])),
+            ('slug', self.gf('django.db.models.fields.SlugField')(max_length=50, db_index=True)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
+        ))
+        db.send_create_signal('home', ['DjangoApplication'])
 
 
     def backwards(self, orm):
         
-        # Deleting model 'Post'
-        db.delete_table('news_post')
+        # Removing unique constraint on 'DjangoApplicationTranslation', fields ['language_code', 'master']
+        db.delete_unique('home_djangoapplication_translation', ['language_code', 'master_id'])
+
+        # Deleting model 'DjangoApplicationTranslation'
+        db.delete_table('home_djangoapplication_translation')
+
+        # Deleting model 'DjangoApplication'
+        db.delete_table('home_djangoapplication')
 
 
     models = {
@@ -67,19 +81,22 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'news.post': {
-            'Meta': {'ordering': "['-publish_at']", 'object_name': 'Post'},
-            'active': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'body': ('django.db.models.fields.TextField', [], {}),
-            'created': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
-            'excerpt': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
+        'home.djangoapplication': {
+            'Meta': {'object_name': 'DjangoApplication'},
+            'author': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']"}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'modified': ('django.db.models.fields.DateTimeField', [], {'auto_now': 'True', 'blank': 'True'}),
-            'publish_at': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2012, 4, 24, 18, 6, 40, 627277)'}),
-            'slug': ('django.db.models.fields.SlugField', [], {'max_length': '50', 'db_index': 'True'}),
-            'title': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
-            'user': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']"})
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'slug': ('django.db.models.fields.SlugField', [], {'max_length': '50', 'db_index': 'True'})
+        },
+        'home.djangoapplicationtranslation': {
+            'Meta': {'unique_together': "[('language_code', 'master')]", 'object_name': 'DjangoApplicationTranslation', 'db_table': "'home_djangoapplication_translation'"},
+            'description': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'language_code': ('django.db.models.fields.CharField', [], {'max_length': '15', 'db_index': 'True'}),
+            'master': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'translations'", 'null': 'True', 'to': "orm['home.DjangoApplication']"}),
+            'teaser': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
+            'title': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         }
     }
 
-    complete_apps = ['news']
+    complete_apps = ['home']
