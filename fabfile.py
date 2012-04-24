@@ -2,6 +2,7 @@ from fabric.api import *
 from os.path import join
 
 env.hosts = ['kinoweekend.org']
+env.user = 'bezrukov'
 
 PROJECT_NAME = 'kinoweekend'
 PROJECT_DIR = join('/home/bezrukov/Envs/%s'%PROJECT_NAME, 'source')
