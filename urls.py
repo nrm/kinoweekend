@@ -16,9 +16,10 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     (r'^i18n/', include('django.conf.urls.i18n')),
+    (r'^localeurl/', include('localeurl.urls')),
 
-    url(r'^$', 'main.views.intro', name='intro'),
-    url(r'home/$', 'news.views.index', name='home'),
+    url(r'^$', 'home.views.intro', name='intro'),
+    url(r'home/$', 'home.views.home', name='home'),
     url(r'test/$', 'main.views.test', name='test'),
     url(r'^news/$', 'news.views.news', name='news'),
     url(r'^news/(?P<slug>[-\w]+)/$', 'news.views.details', name='post'),

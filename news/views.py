@@ -3,11 +3,6 @@ from django.shortcuts import render_to_response, get_list_or_404 , get_object_or
 from news.models import Post
 from django.template import RequestContext
 
-def index(request):
-
-    return render_to_response('index.html', {},
-            context_instance=RequestContext(request))
-
 def news(request):
     posts = Post.objects.get_visible().order_by('-publish_at')
 

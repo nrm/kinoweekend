@@ -14,6 +14,10 @@ div.transbox {
   filter:alpha(opacity=90); /* For IE8 and earlier */
   }
 
+select.form_test {
+  width: 105px;
+    }
+
 #bg {
 	position:fixed;
 	top:-50%;

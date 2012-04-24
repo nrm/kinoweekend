@@ -37,16 +37,16 @@
         <form class="navbar-search pull-left" action="">
             <input type="text" class="search-query span2" placeholder="Search">
         </form>
-        <form class="navbar-form pull-right" action="/i18n/setlang/" method="post">
+        <form class="navbar-form pull-right" id="locale_switcher" method="POST" action="{% url localeurl_change_locale %}">
             {% csrf_token %}
-            <input name="next" type="hidden" value="{{ redirect_to }}" />
-            <select name="language" class="search-query span1">
-            {% get_language_info_list for LANGUAGES as languages %}
-            {% for language in languages %}
-            <option value="{{ language.code }}">{{ language.name_local }} ({{ language.code }})</option>
-            {% endfor %}
+            <select name="locale" class="search-query form_test" onchange="$('#locale_switcher').submit()">
+                {% for lang in LANGUAGES %}
+                    <option value="{{ lang.0 }}" {% ifequal lang.0 LANGUAGE_CODE %}selected="selected"{% endifequal %}>{{ lang.1 }}</option>
+                {% endfor %}
             </select>
-            <input type="submit" value="Go" />
+            <noscript>
+                <input type="submit" value="Set" />
+            </noscript>
         </form>
       </div><!-- /.nav-collapse -->
     </div>

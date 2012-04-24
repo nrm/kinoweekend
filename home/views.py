@@ -1,14 +1,12 @@
 # Create your views here.
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from main.models import Video
 
-def test(request):
-    return render_to_response('test.html', {},
+def intro(request):
+    return render_to_response('intro.html', {},
             context_instance=RequestContext(request))
 
-def index(request):
-    videos = Video.objects.all()
+def home(request):
 
-    return render_to_response('index.html', {'videos': videos},
+    return render_to_response('home.html', {},
             context_instance=RequestContext(request))

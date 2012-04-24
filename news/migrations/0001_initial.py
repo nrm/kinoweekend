@@ -19,7 +19,7 @@ class Migration(SchemaMigration):
             ('slug', self.gf('django.db.models.fields.SlugField')(max_length=50, db_index=True)),
             ('excerpt', self.gf('django.db.models.fields.TextField')(blank=True)),
             ('body', self.gf('django.db.models.fields.TextField')()),
-            ('publish_at', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime(2012, 3, 26, 20, 36, 26, 396549))),
+            ('publish_at', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime(2012, 4, 24, 15, 9, 16, 385759))),
         ))
         db.send_create_signal('news', ['Post'])
 
@@ -75,7 +75,7 @@ class Migration(SchemaMigration):
             'excerpt': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'modified': ('django.db.models.fields.DateTimeField', [], {'auto_now': 'True', 'blank': 'True'}),
-            'publish_at': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2012, 3, 26, 20, 36, 26, 396549)'}),
+            'publish_at': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2012, 4, 24, 15, 9, 16, 385759)'}),
             'slug': ('django.db.models.fields.SlugField', [], {'max_length': '50', 'db_index': 'True'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'user': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']"})

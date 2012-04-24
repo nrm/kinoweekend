@@ -1,4 +1,6 @@
 <!doctype html>
+{% load localeurl_tags %}
+{% load locale_url from localeurl_future %}
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -30,8 +32,8 @@ Festival participation is FREE OF CHARGE.</p>
         <h1><a href="{%url home%}"><b>Kino</b>Weekend</a></h1>
 		<div>
 			<ul class="large">
-				<li><a href="introduction">RUSSIAN</a></li>
-				<li class="left"><a href="shanghai">ENGLISH</a></li>
+                <li class="left"><a href="{% locale_url "ru" "news.views.index" %}">Russian</a></li>
+                <li><a href="{% locale_url "en" "news.views.index" %}">English</a></li>
 			</ul>
 		</div>
 	</div>
