@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-24 13:23+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: settings.py:39
+msgid "Русский"
+msgstr "Russian"
+
+#: settings.py:40
+msgid "English"
+msgstr ""
+
+#: templates/navbar.html:15 templates/navbar.html.py:17
+msgid "О фестивале"
+msgstr "About"
+
+#: templates/navbar.html:18
+msgid "Положение"
+msgstr "Condition"
+
+#: templates/navbar.html:19
+msgid "Расписание"
+msgstr "Schedule"
+
+#: templates/navbar.html:22
+msgid "Новости "
+msgstr "News"
+
+#: templates/navbar.html:23
+msgid "Стоп!Снято! "
+msgstr "Stop!"
+
+#: templates/navbar.html:25 templates/navbar.html.py:27
+msgid "Контакты "
+msgstr "Contact"
+
+#: templates/navbar.html:29
+msgid "Наша Команда "
+msgstr "Our team"
+
+#: templates/navbar.html:31
+msgid "Волонтерам "
+msgstr "Volonters"
+
+#: templates/navbar.html:32
+msgid "Прессе "
+msgstr "Press"
+
+#: templates/navbar.html:35
+msgid "Форум"
+msgstr "Forum"

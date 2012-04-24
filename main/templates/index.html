@@ -1,0 +1,25 @@
+{% extends 'simple.html' %}
+{% comment %}
+{% include "layouts/navbar.html" with active_tab='home' %}
+{% endcomment %}
+
+{% block body %}
+{% autoescape off %}
+{% if videos %}
+    <ul>
+    {% for video in videos %}
+        <li>
+            <p> {{ video.name }} </p>
+            <p> {{ request.path }} URLs </p>
+            <br/>
+            <p> {{ video.teaser }}</p>
+            <bd>
+            {{ video.youtube_link }}
+            </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+{% endautoescape %}
+{% endblock %}

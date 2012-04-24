@@ -1,0 +1,26 @@
+{% extends 'simple.html' %}
+{% comment %}
+{% include "layouts/navbar.html" with active_tab='news' %}
+{% endcomment %}
+
+{% block body %}
+    {% if posts %}
+        <ul>
+        {% for post in posts %}
+        <div class="article">
+            <div class="article-header"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a><span class="header-comment-count"> {{ post.publish_at }}</span></div>
+                <div class="article-content">
+                    <div class="article-description">
+                        {% autoescape off %}
+                            {{ post.excerpt }}
+                        {% endautoescape %}
+                    </div>
+                </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>Sorry, not news yet</p>
+    {% endif %}
+        </ul>
+{% endblock %}
+

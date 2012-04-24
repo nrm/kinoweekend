@@ -5,7 +5,7 @@ from django.template import RequestContext
 
 def index(request):
 
-    return render_to_response('news/index.html', {},
+    return render_to_response('index.html', {},
             context_instance=RequestContext(request))
 
 def news(request):
@@ -13,14 +13,14 @@ def news(request):
 
     #posts = Post.objects.get_visible()[0:5]
 
-    return render_to_response('news/news.html', {'posts': posts},
+    return render_to_response('news.html', {'posts': posts},
             context_instance=RequestContext(request))
 
 def details(request, slug):
     """docstring for details"""
     post = get_object_or_404(Post.objects.get_visible(), slug=slug)
 
-    return render_to_response('news/details.html', {'post': post},
+    return render_to_response('details.html', {'post': post},
             context_instance=RequestContext(request))
 
 #def test(request):

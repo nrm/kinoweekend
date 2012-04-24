@@ -1,0 +1,54 @@
+{% load i18n %}
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container" style="width: auto;">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="/">КиноweekenD</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+            <li id="home-link"><a href="{%url home %}"><i class="icon-home icon-white"></i></a></li>
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "О фестивале"%} <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">{% trans "О фестивале"%}</a></li>
+              <li><a href="#">{% trans "Положение"%}</a></li>
+              <li><a href="#">{% trans "Расписание"%}</a></li>
+            </ul>
+          </li>
+          <li id="news-link"><a href="{% url news %}"><i class="i"></i>{% trans "Новости "%}</a></li>
+          <li id="works-link"><a href="{% url works %}"><i class="icon-film icon-white"></i>{% trans "Стоп!Снято! "%}</a></li>
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "Контакты "%} <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">{% trans "Контакты "%}</a></li>
+              <li class="divider"></li>
+              <li><a href="#">{% trans "Наша Команда "%}</a></li>
+              <!--<li class="nav-header">Допoлнительная инф.</li>-->
+              <li><a href="#">{% trans "Волонтерам "%}</a></li>
+              <li><a href="#">{% trans "Прессе "%}</a></li>
+            </ul>
+          </li>
+          <li id="news-link"><a href="{% url home %}"><i class="i"></i>{% trans "Форум"%}</a></li>
+        </ul>
+        <form class="navbar-search pull-left" action="">
+            <input type="text" class="search-query span2" placeholder="Search">
+        </form>
+        <form class="navbar-form pull-right" action="/i18n/setlang/" method="post">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}" />
+            <select name="language" class="search-query span1">
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+            <option value="{{ language.code }}">{{ language.name_local }} ({{ language.code }})</option>
+            {% endfor %}
+            </select>
+            <input type="submit" value="Go" />
+        </form>
+      </div><!-- /.nav-collapse -->
+    </div>
+  </div><!-- /navbar-inner -->
+</div><!-- /navbar -->
