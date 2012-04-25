@@ -145,12 +145,16 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'south',
     'localeurl',
-    'nani',
+    #'nani',
+    'modeltranslation',
 
     'home',
-    'main',
-    'news',
+    #'main',
+    #'news',
 )
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+MODELTRANSLATION_TRANSLATION_REGISTRY = 'translation'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

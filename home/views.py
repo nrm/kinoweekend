@@ -7,6 +7,10 @@ def intro(request):
     return render_to_response('intro.html', {},
             context_instance=RequestContext(request))
 
+def festival(request):
+    return render_to_response('festival.html', {},
+            context_instance=RequestContext(request))
+
 def home(request):
     print request.LANGUAGE_CODE
     posts = DjangoApplication.objects.language('%s'%request.LANGUAGE_CODE).all()

@@ -20,6 +20,7 @@ urlpatterns = patterns('',
 
     url(r'^$', 'home.views.intro', name='intro'),
     url(r'home/$', 'home.views.home', name='home'),
+    url(r'festival/$', 'home.views.festival', name='festival'),
     #url(r'home/(?P<slug>[-\w+)/$', 'home.views.festival', name='home'),
     url(r'test/$', 'main.views.test', name='test'),
     url(r'^news/$', 'news.views.news', name='news'),

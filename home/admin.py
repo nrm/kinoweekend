@@ -3,6 +3,32 @@ from django.contrib import admin
 from home.models import DjangoApplication #, Normal, SimpleRelated, LimitedChoice
 from nani.admin import TranslatableAdmin, TranslatableTabularInline
 
+
+from django.contrib.flatpages.models import FlatPage
+from django.contrib.flatpages.admin import FlatPageAdmin
+from modeltranslation.admin import TranslationAdmin
+
+class MyFlatPageAdmin(TranslationAdmin):
+    class Media:
+        js = (
+            '/static/modeltranslation/js/force_jquery.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js',
+            '/static/modeltranslation/js/tabbed_translation_fields.js',
+        )
+        css = {
+            'screen': ('/static/modeltranslation/css/tabbed_translation_fields.css',),
+        }
+
+class MyFlatPageAdmin(MyFlatPageAdmin, TranslationAdmin):
+    def formfield_for_dbfield(self, db_field, **kwargs):
+        field = super(MyFlatPageAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+        self.patch_translation_field(db_field, field, **kwargs)
+        return field
+
+admin.site.unregister(FlatPage)
+admin.site.register(FlatPage, MyFlatPageAdmin)
+
+
 class DjangoApplicationAdmin(TranslatableAdmin):
     model = DjangoApplication
 
@@ -29,14 +55,3 @@ class DjangoApplicationAdmin(TranslatableAdmin):
 
 admin.site.register(DjangoApplication, DjangoApplicationAdmin)
 
-    #inlines = [DjangoApplication,]
-
-#class SimpleRelatedInline(TranslatableTabularInline):
-#    model = DjangoApplication
-
-#class NormalAdmin(TranslatableAdmin):
-#    inlines = [SimpleRelatedInline,]
-
-##admin.site.register(Normal, NormalAdmin)
-##admin.site.register(SimpleRelated, TranslatableAdmin)
-#admin.site.register(DjangoApplication, TranslatableAdmin)
