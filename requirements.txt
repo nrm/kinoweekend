@@ -3,6 +3,7 @@ Fabric==1.4.0
 South==0.7.3
 django-hvad==0.1.5
 django-localeurl==1.5
+django-modeltranslation==0.3.3
 gunicorn==0.14.2
 pycrypto==2.5
 ssh==1.7.13
