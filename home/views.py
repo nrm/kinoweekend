@@ -8,6 +8,7 @@ def intro(request):
             context_instance=RequestContext(request))
 
 def festival(request):
+    print request
     return render_to_response('festival.html', {},
             context_instance=RequestContext(request))
 

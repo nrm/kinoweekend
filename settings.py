@@ -149,8 +149,8 @@ INSTALLED_APPS = (
     'modeltranslation',
 
     'home',
-    #'main',
-    #'news',
+    'main',
+    'news',
 )
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
