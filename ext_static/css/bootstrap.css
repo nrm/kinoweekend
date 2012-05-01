@@ -20,6 +20,10 @@ select.form_test {
 div.my_view_content {
   padding: 20px;
 }
+.my_video {
+    width: 100%;
+    margin: 0px auto;
+}
 
 div.my_view_content p {
     text-indent: 25px;

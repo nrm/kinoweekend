@@ -1,6 +1,7 @@
 *.pyc
 *.sql
 static/*
+media/*
 */static/*
 gunicorn_local.sh
 local_settings.py

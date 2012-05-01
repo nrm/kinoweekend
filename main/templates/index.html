@@ -4,6 +4,27 @@
 {% endcomment %}
 
 {% block body %}
+<div class="my_view_content">
+    <div class="page-header">
+        <h1>History of the Festival</h1>
+    </div>
+<div class="well">
+        <p style="text-indent: 25px">
+            The first festival KinoWeekend was organized on 8-11th of October 2010, at that time only in St. Petersburg. The idea has been supported by the other “Youth Film Studio”-branches and already in May 2011 the intercity movie-making marathon KinoWeekend took place in 6 cities of Russia at the same time.
+    </p>
+<br/>
+    <ul>
+        <li><strong>Dec 10-13,  2010  ̶  St. Petersburg</strong></li>
+        <li><strong>Apr 25-28, 2011  ̶  St. Petersburg</strong></li>
+        <li><strong>May 12-16, 2011 ̶  St. Petersburg, Moscow, Kazan, Nizhny Novgorod, Perm, Yekaterinburg</strong></li>
+        <li><strong>Nov 10-14, 2011 ̶  St. Petersburg</strong></li>
+        <li><strong>Nov 24-28, 2011 ̶  Moscow</strong></li>
+        <li><strong>Dec 1-4, 2011 ̶  Kazan</strong></li>
+        <li><strong>Dec 15-18, 2011 ̶  Nizhny Novgorod</strong></li>
+        <li><strong>Mar 1-5, 2012 – Perm</strong></li>
+    </ul>
+</div>
+
 {% autoescape off %}
 {% if videos %}
     <ul>
@@ -22,4 +43,5 @@
     <p>No polls are available.</p>
 {% endif %}
 {% endautoescape %}
+</div>
 {% endblock %}
