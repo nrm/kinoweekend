@@ -25,9 +25,34 @@ div.my_view_content {
     margin: 0px auto;
 }
 
+.video-content-title {
+  margin: 20px 0px 5px 0px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 div.my_view_content p {
     text-indent: 25px;
 }
+.video-content-description {
+  margin: 10px 0px 30px 0px;
+  padding: 10px 0px 0px 0px;
+  border-top: solid 1px black;
+}
+
+.preview-image {
+  margin-bottom: 20px;
+  float: left;
+}
+.preview-image img {
+  height: 125px;
+  width: 200px;
+  border: 1px solid gray;
+}
+
+
+
+
 #bg {
 	position:fixed;
 	top:-50%;
@@ -632,7 +657,7 @@ cite {
   clear: both;
 }
 .article-content {
-  margin: 5px 0px 20px 15px;
+  margin: 5px 0px 20px 215px;
 }
 .article-header {
   font-size: 16px;

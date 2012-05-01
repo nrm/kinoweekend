@@ -12,15 +12,9 @@
       <a class="brand" href="/">КиноWeekend</a>
       <div class="nav-collapse">
         <ul class="nav">
-            <li id="home-link"><a href="{%url home %}"><i class="icon-home icon-white"></i></a></li>
-          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "О фестивале"%} <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="{% url home %}../about/">{% trans "О фестивале"%}</a></li>
-              <li><a href="{% url home %}../regulations/">{% trans "Положение"%}</a></li>
-              <li><a href="#">{% trans "Расписание"%}</a></li>
-            </ul>
-          </li>
+            <li><a href="{% url home %}../about/"><i class="icon-home icon-white"></i> {% trans "О фестивале"%}</a></li>
+            <li><a href="{% url home %}../regulations/">{% trans "Положение"%}</a></li>
+            <li><a href="#">{% trans "Расписание"%}</a></li>
           <li id="news-link"><a href="{% url news %}"><i class="i"></i>{% trans "Новости "%}</a></li>
           <li id="works-link"><a href="{% url works %}"><i class="icon-film icon-white"></i>{% trans "Стоп!Снято! "%}</a></li>
           <li class="dropdown">
@@ -36,9 +30,11 @@
           </li>
           <li id="news-link"><a href="http://forum.kinoweekend.org"><i class="i"></i>{% trans "Форум"%}</a></li>
         </ul>
+        {% comment %}
         <form class="navbar-search pull-left" action="">
             <input type="text" class="search-query span2" placeholder="Search">
         </form>
+        {%endcomment%}
         <form class="navbar-form pull-right" id="locale_switcher" method="POST" action="{% url localeurl_change_locale %}">
             {% csrf_token %}
             <select name="locale" class="search-query form_test" onchange="$('#locale_switcher').submit()">

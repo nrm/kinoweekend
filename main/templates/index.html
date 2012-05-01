@@ -1,7 +1,4 @@
 {% extends 'simple.html' %}
-{% comment %}
-{% include "layouts/navbar.html" with active_tab='home' %}
-{% endcomment %}
 
 {% block body %}
 <div class="my_view_content">
@@ -25,23 +22,35 @@
     </ul>
 </div>
 
-{% autoescape off %}
+{% if photo %}
+<div class="article">
+    <div class="preview-image">
+        <img src="{{MEDIA_URL}}{{ photo.preview }}" />
+    </div>
+    <div class="article-content">
+        <div class="article-header"><h4>{{ photo.title }}</h4></div>
+        <div class="article-description">
+            {{ photo.excerpt }}
+        </div>
+    </div>
+</div>
+{%endif%}
+
+
 {% if videos %}
-    <ul>
-    {% for video in videos %}
-        <li>
-            <p> {{ video.name }} </p>
-            <p> {{ request.path }} URLs </p>
-            <br/>
-            <p> {{ video.teaser }}</p>
-            <bd>
-            {{ video.youtube_link }}
-            </li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
+{% for v in videos %}
+<div class="article">
+    <div class="preview-image">
+        <img src="{{ v.preview }}" />
+    </div>
+    <div class="article-content">
+        <div class="article-header"><a href="{{ v.get_absolute_url }}">{{ v.name }}</a></div>
+        <div class="article-description">
+            {{ v.teaser }}
+        </div>
+    </div>
+</div>
+{% endfor %}
 {% endif %}
-{% endautoescape %}
 </div>
 {% endblock %}

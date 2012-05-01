@@ -1,0 +1,23 @@
+{% extends 'simple.html' %}
+
+
+{% block body %}
+
+  <div class="my_view_content">
+      <div align="middle">
+            {% autoescape off %}
+              {{video.video}}
+            {% endautoescape %}
+      </div>
+  <div class="video-content-title">
+    {{ video.name }}
+  </div>
+  <div class="video-content-metadata">
+    {{ video.publish_date }}
+  </div>
+  <div class="video-content-description">
+    {{ video.description }}     
+  </div>
+  </div>
+
+{% endblock %}

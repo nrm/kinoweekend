@@ -9,7 +9,7 @@ class VideoAdmin(admin.ModelAdmin):
             'fields': ('name', )
         }),
         (u'Описание', {
-            'fields':('teaser', 'description', 'youtube_link',),
+            'fields':('teaser', 'description', 'video_link'),
             }),
         ('Advanced options', {
             'classes': ('collapse',),

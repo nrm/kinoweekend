@@ -15,20 +15,24 @@ class Video(TimeStampedActivate):
     """
     A blog belonging to a user.
     Blogs have multiple posts and one user can have many blogs.
-
     """
     name = models.CharField(max_length=255,
                            help_text="Name of your Video. Can be anything up to 255 characters.")
+    slug = models.SlugField()
     teaser = models.TextField(blank=True,
                                   help_text="Короткое описание ролика")
-    slug = models.SlugField()
     description = models.TextField(blank=True,
                                   help_text="Describe your video.")
-    youtube_link = models.TextField(blank=False,
-                            help_text=u"Ссылка на youtube видео. Под роликом в youtube кнопка 'Поделиться' -> 'Сгенерировать HTML-код, получившееся вставляем в это окно'")
+    video_link = models.CharField(max_length=255,
+                            help_text=u"Ссылка на видео.")
 
     def __unicode__(self):
         return self.name
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('video', {}, {'slug': self.slug})
+
 
     class Meta:
         verbose_name = u'Видео'

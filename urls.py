@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from settings import DEBUG, STATIC_ROOT, STATIC_URL
+from settings import DEBUG, STATIC_ROOT, STATIC_URL, MEDIA_ROOT, MEDIA_URL
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -23,13 +23,14 @@ urlpatterns = patterns('',
     url(r'home/$', 'home.views.home', name='home'),
     url(r'festival/$', 'home.views.festival', name='festival'),
     #url(r'home/(?P<slug>[-\w+)/$', 'home.views.festival', name='home'),
-    url(r'test/$', 'main.views.test', name='test'),
     url(r'^news/$', 'news.views.news', name='news'),
     url(r'^news/(?P<slug>[-\w]+)/$', 'news.views.details', name='post'),
-    url(r'^works/', 'main.views.index', name='works'),
+    url(r'^works/$', 'main.views.index', name='works'),
+    url(r'^works/(?P<slug>[-\w]+)/$', 'main.views.details', name='video'),
 
 )
 
 if DEBUG:
     from django.conf.urls.static import static
     urlpatterns += static(STATIC_URL, document_root=STATIC_ROOT)
+    urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)
