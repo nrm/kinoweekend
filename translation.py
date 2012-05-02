@@ -1,6 +1,7 @@
 from modeltranslation.translator import translator, TranslationOptions
 from django.contrib.flatpages.models import FlatPage
-from foto_report.models import Report, Images
+#from foto_report.models import Report, Images
+from main.models import Video, Report, Images
 
 class FlatPageTranslationOptions(TranslationOptions):
     fields = ('title', 'content',)
@@ -11,6 +12,10 @@ class ReportTranslationOptions(TranslationOptions):
 class ImagesTranslationOptions(TranslationOptions):
     fields = ('name', 'excerpt', )
 
+class VideoTranslationOptions(TranslationOptions):
+    fields = ('name', 'authors', 'teaser', 'description', 'prize','city',)
+
 translator.register(FlatPage, FlatPageTranslationOptions)
 translator.register(Report, ReportTranslationOptions)
 translator.register(Images, ImagesTranslationOptions)
+translator.register(Video, VideoTranslationOptions)

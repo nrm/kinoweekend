@@ -1,0 +1,43 @@
+{% extends 'simple.html' %}
+{% load thumbnail %}
+
+{% block body %}
+
+<div class="my_view_content">
+
+      <div class="article-header">
+          <h1>{{images.title}} </h1>
+      </div>
+          <div id="myCarousel" class="carousel slide">
+            <div class="carousel-inner">
+                {%for image in images.images_set.all%}
+                  <div class="item {%if forloop.counter == 1 %}active{%endif%}">
+                          {% thumbnail image.image "730x500" crop="center" as im %}
+                          <a href="{{MEDIA_URL}}{{ image.image }}" title="look ma!" target="_blank">
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                          </a>
+                        {% endthumbnail %}
+                    <div class="carousel-caption">
+                      <h4>{{ forloop.counter }} {{image.name}}</h4>
+                      <p>{{image.excerpt}}</p>    
+                    </div>
+                  </div>
+                {%endfor%}
+            </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+          </div>
+          <hr>
+
+    <div class="article">
+        {{ images.body }}
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ STATIC_URL }}js/jquery-1.7.1.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap-transition.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap-carousel.js"></script>
+
+{% endblock %}

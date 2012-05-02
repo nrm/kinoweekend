@@ -12,15 +12,15 @@
       <a class="brand" href="/">КиноWeekend</a>
       <div class="nav-collapse">
         <ul class="nav">
-            <li><a href="{% url home %}../about/"><i class="icon-home icon-white"></i> {% trans "О фестивале"%}</a></li>
-            <li><a href="{% url home %}../regulations/">{% trans "Положение"%}</a></li>
-            <li><a href="#">{% trans "Расписание"%}</a></li>
+            <li><a href="{% url news %}../about/"><i class="icon-home icon-white"></i> {% trans "О фестивале"%}</a></li>
+            <li><a href="{% url news %}../regulations/">{% trans "Положение"%}</a></li>
+            <li><a href="#schedule">{% trans "Расписание"%}</a></li>
           <li id="news-link"><a href="{% url news %}"><i class="i"></i>{% trans "Новости "%}</a></li>
           <li id="works-link"><a href="{% url works %}"><i class="icon-film icon-white"></i>{% trans "Стоп!Снято! "%}</a></li>
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "Контакты "%} <b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a href="{% url home %}../contacts/">{% trans "Контакты "%}</a></li>
+                <li><a href="{% url news %}../contacts/">{% trans "Контакты "%}</a></li>
               <li class="divider"></li>
               <li><a href="#">{% trans "Наша Команда "%}</a></li>
               <!--<li class="nav-header">Допoлнительная инф.</li>-->

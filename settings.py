@@ -175,12 +175,13 @@ INSTALLED_APPS = (
     #'nani',
     'modeltranslation',
     'debug_toolbar',
+    'sorl.thumbnail',
 
-    'home',
+    #'home',
     'main',
     'news',
 
-    'foto_report',
+    #'foto_report',
 )
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'

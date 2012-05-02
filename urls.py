@@ -20,13 +20,13 @@ urlpatterns = patterns('',
 
     #url(r'^$', 'home.views.intro', name='intro'),
     ('^$', 'django.views.generic.simple.redirect_to', {'url': '/about'}),
-    url(r'home/$', 'home.views.home', name='home'),
-    url(r'festival/$', 'home.views.festival', name='festival'),
+    #url(r'home/$', 'home.views.home', name='home'),
     #url(r'home/(?P<slug>[-\w+)/$', 'home.views.festival', name='home'),
     url(r'^news/$', 'news.views.news', name='news'),
     url(r'^news/(?P<slug>[-\w]+)/$', 'news.views.details', name='post'),
     url(r'^works/$', 'main.views.index', name='works'),
     url(r'^works/(?P<slug>[-\w]+)/$', 'main.views.details', name='video'),
+    url(r'^photo/(?P<slug>[-\w]+)/$', 'main.views.image_details', name='photo'),
 
 )
 

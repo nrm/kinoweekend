@@ -61,51 +61,48 @@
 
     <div class="container">
 
-        {% block navbar %}
-            {% include "navbar.html" %}
-        {% endblock %}
+       {% block navbar %}
+           {% include "navbar.html" %}
+       {% endblock %}
 
        <div class="content">
-  <div class="row">
+          <div class="row">
 
-      <div class="span2 transbox">
-          <ul class="thumbnails">
-              <li>
-                <div class="thumbnail">
-                  <img src="http://placehold.it/140x80" alt="">
-                  <h5>Партнеры</h5>
-                  <p>Thumbnail caption right here...</p>
-                </div>
-              </li>
-          </ul>
-          ...
-      </div>
+              <div class="span2 transbox">
+                  <ul class="thumbnails">
+                      <li>
+                        <div class="thumbnail">
+                          <img src="http://placehold.it/140x80" alt="">
+                          <h5>Партнеры</h5>
+                          <p>Thumbnail caption right here...</p>
+                        </div>
+                      </li>
+                  </ul>
+              </div>
 
-  <div class="span8 transbox">
-      {% block body %}
-      <p>Test</p>
-      {% endblock %}
-  </div>
+              <div class="span8 transbox">
+                  {% block body %}
+                  <p>Test</p>
+                  {% endblock %}
+              </div>
 
-    <div class="span2 transbox">
-          <ul class="thumbnails">
-              <li>
-                <div class="thumbnail">
-                  <img src="http://placehold.it/140x80" alt="">
-                  <h5>Спонсоры</h5>
-                  <p>Thumbnail caption right here...</p>
-                </div>
-              </li>
-          </ul>
-    </div>
-    </div>
-     </div>
+               <div class="span2 transbox">
+                 <ul class="thumbnails">
+                     <li>
+                       <div class="thumbnail">
+                         <img src="http://placehold.it/140x80" alt="">
+                         <h5>Спонсоры</h5>
+                         <p>Thumbnail caption right here...</p>
+                       </div>
+                     </li>
+                 </ul>
+               </div>
+          </div>
+       </div>
 
-   <footer>
-       <p>
-           Content and Videos &copy; 2012 kinoweekend 
-       </p>
-   </footer>
+       <footer>
+           <p>Content and Videos &copy; 2012 kinoweekend</p>
+       </footer>
 
     </div> <!-- /container -->
 

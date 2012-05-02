@@ -10,12 +10,22 @@
             {% endautoescape %}
       </div>
   <div class="video-content-title">
-    {{ video.name }}
+    {{ video.name }}  <span class="header-city"><em>{{ video.city }}</em></span>
   </div>
   <div class="video-content-metadata">
     {{ video.publish_date }}
   </div>
   <div class="video-content-description">
+        {%if video.authors %}
+            <div class="article-description">
+                <span><strong>Реж: </strong>{{ video.authors }}</span>
+            </div>
+        {% endif %}
+        {% if video.prize %}
+            <div class="article-prize">
+                <span class="label label-info">{{video.prize}}</span>
+            </div>
+        {% endif %}
     {{ video.description }}     
   </div>
   </div>
