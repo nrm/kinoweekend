@@ -10,11 +10,11 @@
         <h3>{{ post.title }}</h3><span class="header-comment-count"> {{ post.publish_at }}</span>
     </div>
         {% if post %}
-            <div class="article">
                 <div class="article-description">
-                    {{ post.body }}
+                        {% autoescape off %}
+                            {{ post.body }}
+                        {% endautoescape %}
                 </div>
-            </div>
             <br>
         {% endif %}
 

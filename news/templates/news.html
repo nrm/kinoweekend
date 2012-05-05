@@ -16,9 +16,11 @@
         {% for post in posts %}
         <div class="article">
             <div class="article-header"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a><span class="header-comment-count"> {{ post.publish_at }}</span></div>
-                    <div class="article-description">
-                        {{ post.excerpt }}
-                    </div>
+            <div class="clear_p">
+                        {% autoescape off %}
+                            {{ post.excerpt }}
+                        {% endautoescape %}
+            </div>
         </div>
         {% endfor %}
     {% else %}
