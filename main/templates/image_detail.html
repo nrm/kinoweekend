@@ -6,11 +6,11 @@
 <div class="my_view_content">
 
       <div class="article-header">
-          <h1>{{images.title}} </h1>
+          <h1>{{title}} </h1>
       </div>
           <div id="myCarousel" class="carousel slide">
             <div class="carousel-inner">
-                {%for image in images.images_set.all%}
+                {%for image in images%}
                   <div class="item {%if forloop.counter == 1 %}active{%endif%}">
                           {% thumbnail image.image "730x500" crop="center" as im %}
                           <a href="{{MEDIA_URL}}{{ image.image }}" title="look ma!" target="_blank">
@@ -18,7 +18,7 @@
                           </a>
                         {% endthumbnail %}
                     <div class="carousel-caption">
-                      <h4>{{ forloop.counter }} {{image.name}}</h4>
+                        <h4>{{ forloop.counter }}/{{ images|length }} {{image.name}}</h4>
                       <p>{{image.excerpt}}</p>    
                     </div>
                   </div>
