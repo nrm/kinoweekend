@@ -6,7 +6,7 @@
 <div class="my_view_content">
 
       <div class="article-header">
-          <h1>{{title}} </h1>
+          <h1>{{title.title}} </h1>
       </div>
           <div id="myCarousel" class="carousel slide">
             <div class="carousel-inner">
@@ -30,7 +30,7 @@
           <hr>
 
     <div class="article">
-        {{ images.body }}
+        {{ title.body }}
     </div>
 </div>
 {% endblock %}
