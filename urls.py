@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import patterns, include, url
 from settings import DEBUG, STATIC_ROOT, STATIC_URL, MEDIA_ROOT, MEDIA_URL
 
+
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -19,9 +20,7 @@ urlpatterns = patterns('',
     (r'^localeurl/', include('localeurl.urls')),
 
     #url(r'^$', 'home.views.intro', name='intro'),
-    ('^$', 'django.views.generic.simple.redirect_to', {'url': '/about'}),
-    #url(r'home/$', 'home.views.home', name='home'),
-    #url(r'home/(?P<slug>[-\w+)/$', 'home.views.festival', name='home'),
+    (r'^$', 'django.views.generic.simple.redirect_to', {'url': '/about'}),
     url(r'^news/$', 'news.views.news', name='news'),
     url(r'^news/(?P<slug>[-\w]+)/$', 'news.views.details', name='post'),
     url(r'^works/$', 'main.views.index', name='works'),

@@ -27,7 +27,7 @@ def index(request):
             context_instance=RequestContext(request))
 
 def image_details(request, slug):
-    images = Report.objects.get(id=1)
+    images = Report.objects.get(id=2)
 
     return render_to_response('image_detail.html', {'images': images},
             context_instance=RequestContext(request))

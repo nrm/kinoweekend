@@ -7,12 +7,36 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
-
-div.transbox {
+.footer {
+  border-top-color:#E5E5E5;
+  border-top-style:solid;
+  border-top-width:0px;
+  margin-top:45px;
+  padding-bottom:26px;
+  padding-left:0;
+  padding-right:0;
+  padding-top:35px;
+  color: white;
+  background: #222222;
+  opacity:0.8;
+  filter:alpha(opacity=90); /* For IE8 and earlier */
+}
+.transbox {
   background-color:#ffffff;
   opacity:0.97;
   filter:alpha(opacity=90); /* For IE8 and earlier */
-  }
+}
+.centered {
+  display: block;
+  margin-left: 10px;   
+  margin-right: auto;
+}
+.container > footer p {
+  text-align: center;
+  background: #222222;
+  /* center align it with the container */
+
+}
 
 select.form_test {
   width: 105px;
@@ -320,9 +344,15 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 }
-a {
+/*a {
   color: #92cc44;
   text-decoration: none;
+}*/
+a {
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
 }
 a:hover {
   color: #005580;
@@ -3312,7 +3342,7 @@ input[type="submit"].btn.btn-mini {
   display: block;
   padding: 4px;
   line-height: 1;
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
