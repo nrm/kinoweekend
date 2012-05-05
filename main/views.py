@@ -10,7 +10,7 @@ def index(request):
     videos = Video.objects.all()
     for video in videos:
         video.preview = _v_link(video.video_link)
-    photo = get_or_none(Report, id=1)
+    photo = get_or_none(Report, id=2)
     paginator = Paginator(videos, 5)
 
     try:
