@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-05 16:38+0400\n"
+"POT-Creation-Date: 2012-05-06 00:17+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,6 +45,10 @@ msgstr ""
 "Новгород, Пермь и Екатеринбург. За историю фестиваля было снято более 100 "
 "короткометражных работ! Вашему вниманию некоторые из них, отмеченные жюри и "
 "зрителями!"
+
+#: news/templates/news.html:10
+msgid "News of the Festival"
+msgstr "Новости Фестиваля"
 
 #: templates/navbar.html:15
 msgid "О фестивале"
@@ -86,18 +90,18 @@ msgstr ""
 msgid "Форум"
 msgstr ""
 
-#: templates/simple.html:3
+#: templates/reg.html:3 templates/simple.html:3
 msgid "en"
 msgstr "ru"
 
-#: templates/simple.html:102
+#: templates/reg.html:307 templates/simple.html:102
 msgid "Follow us on"
-msgstr "Следите за нами"
+msgstr ""
 
-#: templates/simple.html:103
+#: templates/reg.html:308 templates/simple.html:103
 msgid "Vkontakte"
-msgstr "Вконтакте"
+msgstr ""
 
-#: templates/simple.html:103
+#: templates/reg.html:308 templates/simple.html:103
 msgid "and"
-msgstr "и"
+msgstr "and"

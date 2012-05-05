@@ -1,42 +1,6 @@
 from news.models import Post
 from django.contrib import admin
-#from settings import STATIC_URL, STATIC_ROOT
-#from django.contrib.admin import site, ModelAdmin
-
-
-#from django.core.urlresolvers import reverse
-#from django.contrib.flatpages.admin import FlatPageAdmin
-#from django.contrib.flatpages.models import FlatPage
-#from tinymce.widgets import TinyMCE
-
-##class CommonMedia:
-##    js = (
-##        'https://ajax.googleapis.com/ajax/libs/dojo/1.6.0/dojo/dojo.xd.js',
-##        '%sjs/editor.js'%STATIC_URL,
-##        )
-##    css = {
-##        #'all': ('%scss/editor.css'%STATIC_URL,),
-##        #'all': ('/site_media/css/editor.css',),
-##        }
-##
-
-#class TinyMCEFlatPageAdmin(FlatPageAdmin):
-#    def formfield_for_dbfield(self, db_field, **kwargs):
-#        if db_field.name == 'content':
-#            return forms.CharField(widget=TinyMCE(
-#                attrs={'cols': 80, 'rows': 30},
-#                mce_attrs={'external_link_list_url': reverse('tinymce.views.flatpages_link_list')},
-#            ))
-#        return super(TinyMCEFlatPageAdmin, self).formfield_for_dbfield(db_field, **kwargs)
-#
-#
-#class PostForm(forms.ModelForm):
-#    excerpt = forms.CharField( widget=CKEditor(ckeditor_config='default'))
-#    #body = forms.CharField( widget=CKEditor(ckeditor_config='full'))
-#    body = forms.CharField(widget=TinyMCE())
-#
-#    class Meta:
-#        model = Post
+from modeltranslation.admin import TranslationAdmin
 
 class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
@@ -62,9 +26,22 @@ class PostAdmin(admin.ModelAdmin):
             'classes': ('collapse',),
         })
     )
-    #form = PostForm
 
-admin.site.register(Post, PostAdmin)
+    class Media:
+        js = (
+            '/static/modeltranslation/js/force_jquery.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js',
+            '/static/modeltranslation/js/tabbed_translation_fields.js',
+        )
+        css = {
+            'screen': ('/static/modeltranslation/css/tabbed_translation_fields.css',),
+        }
 
-#admin.site.unregister(FlatPage)
-#admin.site.register(FlatPage, TinyMCEFlatPageAdmin)
+class TranslatedPostAdmin(PostAdmin, TranslationAdmin):
+    def formfield_for_dbfield(self, db_field, **kwargs):
+        field = super(TranslatedPostAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+        self.patch_translation_field(db_field, field, **kwargs)
+        return field
+
+admin.site.register(Post, TranslatedPostAdmin)
+
