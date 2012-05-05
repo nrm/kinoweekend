@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+{% load i18n %}
+<html lang={% trans "en"%}>
+  <head>
+    <title>{% block title %}KinoWeekend{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Ilya Bezrukov">
+    <meta name="google-site-verification" content="1phSA9JRapQzNg_uqVjcC8HaAoHKuyGOstaMIqDr-RE" />
+
+    <!-- Le styles -->
+    <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+     {% comment %}
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+     {% endcomment %}
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ STATIC_URL }}images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}images/apple-touch-icon-114x114.png">
+    {% block styles %}{% endblock %}
+
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+    <script src="{{ STATIC_URL }}js/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>    
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-30499954-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body>
+
+     <header class="container">
+     <div class="content">
+       <div class="page-header alert alert-success pull-right ">
+           <h1><strong style="color: #292929">КиноWeekend</strong> <small><em>Официальный сайт фестиваля</em></small></h1>
+       </div>
+     </div>
+     </header>
+
+    <div class="container">
+       {% block navbar %}
+           {% include "navbar.html" %}
+       {% endblock %}
+    </div>
+
+    <div class="container">
+       <div class="content">
+          <div class="row">
+              <div class="span2">
+                  {% block lift_sidebar %}
+                      <ul class="thumbnails">
+                          <li class="span2">
+                            <div  align="middle" class="thumbnail">
+                              <a href="http://vtr-center.ru/" title="look ma!" target="_blank">
+                                <img src="https://s3-eu-west-1.amazonaws.com/kinoweekend/partner_VRT.jpg" alt="vtr-center" width="80%">
+                              </a>
+                            </div>
+                          </li>
+                      </ul>
+                  {% endblock %}
+              </div>
+
+
+              <div class="span8 transbox">
+                  {% block body %}
+<div class="my_view_content">
+    <div class="page-header">
+        <h1 align="center">Положение</h1>
+        <h2 align="center">О проведении открытого арт-фестиваля<br/>
+            «КиноWeekend»<br/>
+            24-28 мая 2012
+        </h2>
+    </div>
+
+
+        <ol>
+            <li><a href="#about">О фестивале</a></li>
+            <li><a href="#program">Программа фестиваля</a></li>
+            <li><a href="#condition">Условия участия в кинофестивале</a></li>
+            <li><a href="#about">О фестивале</a></li>
+        </ol>
+
+
+    <div class="article-header">
+        <h2><a name="about"></a>
+    I.	О фестивале
+        </h2>
+    </div>
+
+    <div class="article-description my_pagging">
+        <ul class="unstyled" >
+            <li>1.1  <strong>КиноWeekend</strong> это арт-фестиваль в условиях тематических, временных и технических рамок. Задача участников разработать сценарий с учетом поставленных организаторами условий, отснять, озвучить и смонтировать короткометражный фильм за 72 часа! Условия объявляются в первый фестивальный день. Работы участников оцениваются профессиональным жюри и зрителями.</li>
+
+            <li>1.2  <strong>Цель Фестиваля</strong> - развитие творческих способностей участников, отработка теоретических навыков на практике, совершенствование навыков командной работы, поддержание и увеличение интереса к процессу кинопроизводства.</li>
+
+            <li>1.3 Сроки проведения: 24-28 мая 2012г.</li>
+
+            <li>1.4 Место проведения: - Санкт-Петербург, Нижний Новгород, Казань.</li>
+
+            <li>1.5 Организатор фестиваля – Центр всестороннего творческого развития (ВТР-центр), Молодежная Киностудия (МКС).</li>
+            <div class="alert alert-info">
+                <strong>Участие в Фестивале БЕСПЛАТНОЕ.</strong>
+            </div>
+
+    <div class="article-header">
+        <h2><a name="program"></a>
+  II.	Программа фестиваля
+        </h2>
+    </div>
+
+    <div class="article-description my_pagging">
+        <ul class="unstyled" >
+            <li>2.1 <strong>Участники Фестиваля</strong> – съемочные команды в составе от 2 человек. Принять участие в Фестивале может любой желающий.</li> 
+
+        <li>2.2 <strong>Регистрация команд</strong><br/>
+    С 7 мая по 22 мая 2012г. (включительно) участники высылают на электронный адрес Фестиваля заполненную заявку (КinoWeekend — Заявка на участие.doc).
+    Регистрироваться могут ТОЛЬКО сформированные команды из 2х и более человек. 
+    <br/>
+    <br/>
+    Для участников «базовых городов» предусмотрены отдельные ящики:
+    <ul style="padding: 10px;">
+        <li style="padding: 0px;"><a href="mailto:#">kinoweekend-spb@yandex.ru</a> - Санкт-Петербург,</li>
+        <li style="padding: 0px;"><a href="mailto:#">kinoweekend-nn@yandex.ru</a> - Нижний Новгород,</li>
+        <li style="padding: 0px;"><a href="mailto:#">kinoweekend-kzn@yandex.ru</a> – Казань.</li>
+    </ul>
+    <em>Съемочная техника Организаторами не предоставляется.</em></li>
+
+    <li>2.3 <strong>Актерская база</strong>
+    <br/>
+    Необходимо загрузить 2 фото (портрет, полный рост) в альбом «Актерская база». 
+    <br/>
+    Смотри гр.  <a href="http://vk.com/kinoweekend"><strong>Вконтакте</strong></a>
+
+    В комментариях указывается:
+    <ol style="padding: 10px;">
+        <li style="padding: 0px;"> Фамилия Имя,</li>
+        <li style="padding: 0px;"> Город,</li>
+        <li style="padding: 0px;"> Координаты (телефон, e-mail),</li>
+        <li style="padding: 0px;"> Любая дополнительная информация (возраст, образование, опыт участия в съемках и т.д.) по желанию.</li>
+    </ol>
+    <em>Внимание! Регистрация в актерской базе не гарантирует участия в съемках. Выбор и кастинг актеров проводятся по решению съемочных команд заранее или непосредственно в дни съемок.</em></li>
+
+    <li>2.4 Ход фестиваля
+    <br/>
+    Фестиваль стартует <span class="label label-important">24 мая 2012 г. в 20:00</span> по местному времени. Все зарегистрированные съемочные команды получают <strong>условия</strong> для выполнения задания.
+    <br/>
+    Условие представляет собой одно или несколько нижеперечисленных пунктов:
+    <ul style="padding: 10px;">
+        <li style="padding: 0px;">Тема</li>
+        <li style="padding: 0px;">Предмет</li>
+        <li style="padding: 0px;">Фраза </li>
+        <li style="padding: 0px;">Действие</li>
+        <li style="padding: 0px;">и т.д.</li>
+    </ul>
+
+    <strong>24, 25, 26, 27 мая</strong> - команды работают над фильмом (сценарий, съёмка, монтаж и т.д.).
+    <br/>
+    <strong>27 мая к 20:00</strong> - готовые работы выкладываются на YouTube или Vimeo (требования к работе см. п.п. 3.2-3.5)
+    <br/>
+    <strong>28 мая - предварительный просмотр и проверка на соответствие условиям.</strong>
+    <br/>
+    Вечером – торжественный гала-просмотр фильмов, оценка профессиональным жюри, голосование зрителей, награждение победителей, вручение дипломов и призов.
+    <br/>
+    <br/>
+    Место встречи участников в городах будет указано дополнительно в документе <span style="text-decoration:underline"><em>«Ваш город. Программа фестиваля»</em></span>.
+
+
+    <div class="article-header">
+        <h2><a name="condition"></a>
+III.	Условия участия в кинофестивале
+        </h2>
+    </div>
+
+3.1 Вся творческая работа должна быть сделана только в течение 72 часов фестивальных дней. До открытия фестиваля ее начинать не разрешается. Творческая работа включает в себя, но не ограничивается:
+<ul style="padding: 10px;">
+    <li style="padding: 0px;">Написание сценария;</li>
+	<li style="padding: 0px;">Репетиции;</li>
+	<li style="padding: 0px;">Художественное оформление (работа с костюмами и декорациями);</li>
+	<li style="padding: 0px;">Съемки;</li>
+	<li style="padding: 0px;">Монтаж;</li>
+	<li style="padding: 0px;">Звуковой дизайн;</li>
+	<li style="padding: 0px;">Rendering;</li>
+	<li style="padding: 0px;">Вывод Работы на youtube или vimeo.</li>
+</ul>
+
+До открытия фестиваля разрешается:
+<ul style="padding: 10px;">
+	<li style="padding: 0px;">Организовать съемочную команду;</li>
+	<li style="padding: 0px;">Набрать актеров;</li>
+	<li style="padding: 0px;">Найти съемочную технику;</li>
+	<li style="padding: 0px;">Найти возможные локации (места съемок).</li>
+</ul>
+
+3.2 Требования к выполнению Работы
+<ul style="padding: 10px;">
+	<li style="padding: 0px;">длительность Работы должна быть не более 7 минут;</li>
+	<li style="padding: 0px;">в Работе должны соблюдаться условия, выданные в первый фестивальный день;</li>
+	<li style="padding: 0px;">Работа должна содержать титры с названием в начале ролика;</li>
+	<li style="padding: 0px;">перед законченной Работой должен быть черный экран 2 секунды (технические).</li>
+</ul>
+
+3.3 Во время фестиваля участникам разрешается:
+<ul style="padding: 10px;">
+	<li style="padding: 0px;">выполнять Работу в любом жанре;</li>
+	<li style="padding: 0px;">использовать любые места съемок;</li>
+	<li style="padding: 0px;">использовать любые (авторские и не авторские) музыкальные композиции;</li>
+	<li style="padding: 0px;">привлекать к осуществлению Работы третьих лиц (всех желающих);</li>
+	<li style="padding: 0px;">использовать фотоснимки, анимацию и спецэффекты при условии, что они сделаны в  течение проекта – 72 часов (прим. Разрешен только тот уже готовый видеоматериал, который взят из программы по созданию спецэффектов);</li>
+	<li style="padding: 0px;">использовать актерскую базу;</li>
+	<li style="padding: 0px;">по городу разрешается передвигаться любыми способами и использовать любые виды личного и общественного транспорта.</li>
+</ul>
+
+3.4 Участникам запрещается использовать в Работе:
+<ul style="padding: 10px;">
+	<li style="padding: 0px;">кадры, снятые ранее или чужого авторства;</li>
+	<li style="padding: 0px;">нецензурную лексику;</li>
+	<li style="padding: 0px;">пропаганду насилия, национального экстремизма;</li>
+	<li style="padding: 0px;">рекламу коммерческого продукта в явном или скрытом виде.</li>
+</ul>
+
+3.5 Финиш команд
+27 мая к 20:00 по местному времени необходимо отправить сообщение на указанные в п. 2.2 почтовые ящики, которое должно содержать следующее:  
+1. Ссылка на Работу в YouTube или Vimeo,
+2. Название работы,
+3. ИФ режиссера,
+4. Список всей съемочной команды с указанием должности в команде,
+5. Хронометраж работы,
+6. Аннотация к работе в свободной форме (1-3 предложения),
+7. Согласен ли участник на распространение организаторами его Работы (использование части Работы или целиком в рекламе Фестиваля, размещение Работы на ресурсах Фестиваля).
+
+Работы, посланные позднее этого срока, в фестивале не участвуют.
+
+3.6 Прием работ в оригинальном качестве
+Необходимо передать организаторам фестиваля Работу в оригинальном качестве. 
+
+Порядок передачи Работ организаторам, технические параметры, место и время встречи участников в городах будет указано дополнительно в документе «Ваш город. Программа фестиваля».
+
+
+
+
+
+
+IV.	Награждение победителей
+
+Победителей определяет специальное жюри профессионалов. Фильмы, набравшие наибольшее число голосов, является победителями, награждаются дипломами за I, II, III места.
+
+Также предусмотрен приз зрительских симпатий. Его получает работа, набравшая наибольшее количество голосов по результатам зрительского голосования во время показа.
+
+Будут вручены дипломы победителям; призы от гостей Фестиваля.
+
+Организаторы оставляют за собой право вносить изменения в Положение и Программу мероприятия при условии информирования Участников об этих изменениях.
+
+
+Контакты
+http://vk.com/kinoweekend
+www.kinoweekend.org
+
+Санкт-Петербург
+Надежда Чагина
+kinoweekend-spb@yandex.ru 
+
+Нижний Новгород
+Александр Овчинников
+kinoweekend-nn@yandex.ru 
+
+Казань
+Лилия Хуснутдинова
+kinoweekend-kzn@yandex.ru 
+
+              </div>
+                  <p>Test</p>
+                  {% endblock %}
+              </div>
+
+               <div class="span2 transbox">
+                  {% block right_sidebar %}
+                  {% endblock %}
+               </div>
+          </div>
+       </div>
+    </div> <!-- /container -->
+
+    <div class="container" style="width: 100%">
+       <footer class="footer">
+           <p><strong>
+               &copy; 2012 kinoweekend | {% trans "Follow us on" %}
+               <a link="#79a3c0" href="http://vk.com/kinoweekend" target="_blank">{% trans "Vkontakte" %}</a> {% trans "and" %}
+               <a href="http://www.facebook.com/groups/358970440812074/" target="_blank">Facebook</a>
+           </strong></p>
+       </footer>
+
+    </div> <!-- /container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ STATIC_URL }}js/bootstrap.js"></script>
+    {% block script %}{% endblock %}
+  </body>
+</html>
