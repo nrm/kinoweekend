@@ -10,7 +10,7 @@ def index(request):
     videos = Video.objects.all()
     for video in videos:
         video.preview = _v_link(video.video_link)
-    photo = get_or_none(Report, id=1)
+    photo = get_or_none(Report, id=2)
     paginator = Paginator(videos, 5)
 
     try:
@@ -27,8 +27,8 @@ def index(request):
             context_instance=RequestContext(request))
 
 def image_details(request, slug):
-    title = Report.objects.get(id=1).title
-    images = Report.objects.get(id=1).images_set.order_by('id')
+    title = Report.objects.get(slug=slug).title
+    images = Report.objects.get(slug=slug).images_set.order_by('id')
 
     return render_to_response('image_detail.html', {'images': images,'title':title},
             context_instance=RequestContext(request))

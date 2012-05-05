@@ -21,7 +21,6 @@ urlpatterns = patterns('',
 
     #url(r'^$', 'home.views.intro', name='intro'),
     (r'^$', 'django.views.generic.simple.redirect_to', {'url': '/about'}),
-    (r'^test/$', 'django.views.generic.simple.direct_to_template',{'template': 'test.html'}),
     url(r'^news/$', 'news.views.news', name='news'),
     url(r'^news/(?P<slug>[-\w]+)/$', 'news.views.details', name='post'),
     url(r'^works/$', 'main.views.index', name='works'),
