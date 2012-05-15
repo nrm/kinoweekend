@@ -176,6 +176,7 @@ INSTALLED_APPS = (
     'modeltranslation',
     'debug_toolbar',
     'sorl.thumbnail',
+    'disqus',
 
     #'home',
     'main',
@@ -183,6 +184,9 @@ INSTALLED_APPS = (
 
     #'foto_report',
 )
+
+DISQUS_API_KEY = 'hwv4vZDrTtkeyxbiHJyr2yfvGy0hcqq4bbWp5zOKhczTgw3yLAgTGtqbDhyySujo'
+DISQUS_WEBSITE_SHORTNAME = 'kinoweekend'
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 MODELTRANSLATION_TRANSLATION_REGISTRY = 'translation'

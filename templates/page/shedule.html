@@ -1,5 +1,7 @@
 {% extends 'simple.html' %}
 {% load thumbnail %}
+{% load disqus_tags %}
+{% disqus_show_comments %}
 
     {% block title %}
     Расписание
@@ -163,6 +165,6 @@
         </div>
     </div>
     <hr/>
-
+{% disqus_show_comments %}
 </div>
     {% endblock %}

@@ -3,6 +3,7 @@ Fabric==1.4.0
 PIL==1.1.7
 South==0.7.3
 -e git://github.com/django-debug-toolbar/django-debug-toolbar.git@de515e2882f1e141865a27292bcda4d394ce601d#egg=django_debug_toolbar-0.9.4-py2.6-dev
+django-disqus==0.4.1
 django-localeurl==1.5
 django-modeltranslation==0.3.3
 gunicorn==0.14.2
