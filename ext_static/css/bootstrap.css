@@ -15,6 +15,7 @@ ol.my_columns {
     }
 ol.my_columns li{
     padding: 0px;
+    text-indent: 0px;
 }
 .my_article {
     padding: 10px 0px 0px 0px;
