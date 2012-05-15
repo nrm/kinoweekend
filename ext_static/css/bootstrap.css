@@ -10,6 +10,16 @@
 .my_pagging > ul li {
     padding: 5px 10px 15px 20px;
     }
+ol.my_columns {
+    padding: 10px 0px 0px 10px;
+    }
+ol.my_columns li{
+    padding: 0px;
+}
+.my_article {
+    padding: 10px 0px 0px 0px;
+    text-indent: 30px;
+}
 .footer {
   border-top-color:#E5E5E5;
   border-top-style:solid;

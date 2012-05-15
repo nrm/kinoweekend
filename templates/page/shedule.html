@@ -1,0 +1,168 @@
+{% extends 'simple.html' %}
+{% load thumbnail %}
+
+    {% block title %}
+    Расписание
+    {% endblock %}
+
+{% block body %}
+<div class="my_view_content">
+    <div class="page-header">
+        <h1 align="center">Информация о мастер-классах </h1>
+        <h2 align="center">в Санкт-Петербурге<br/>
+        </h2>
+    </div>
+    <div class="article-header">
+        <h2><a name="about"></a>
+            <strong>Мастер-класс:</strong>
+        </h2>
+    </div>
+    <ol>
+        <li><a href="#1">Сними свое КИНО с первого дубля!</a></li>
+        <li><a href="#2">Как работать со ЗВУКОМ в кино?</a></li>
+        <li><a href="#3">Как написать оригинальный СЦЕНАРИЙ для фильма?</a></li>
+    </ol>
+    <hr/>
+
+    <div class="article-header">
+        <h3><a name="1"></a>
+            МАСТЕР-КЛАСС "Сними свое КИНО с первого дубля!"
+        </h3>
+        <span class="label label-success">19 мая 14.00-17.00</span>
+    </div>
+
+    <div style="margin-bottom:-20px;">
+        <ul class="thumbnails">
+          <li class="span4">
+            <a href="https://s3-eu-west-1.amazonaws.com/kinoweekend/images/%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9+%D0%9F%D0%B0%D0%BB%D0%B0%D0%BC%D0%B0%D1%80%D1%87%D1%83%D0%BA.jpg" class="thumbnail" title="look ma!" target="_blank">
+            {% thumbnail "https://s3-eu-west-1.amazonaws.com/kinoweekend/images/%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9+%D0%9F%D0%B0%D0%BB%D0%B0%D0%BC%D0%B0%D1%80%D1%87%D1%83%D0%BA.jpg" "260x180" crop="80% top" as im %}
+              <img src="{{ im.url }}" alt="Актер">
+            {% endthumbnail %}
+            </a>
+          </li>
+          <li class="span3">
+            <a href="https://s3-eu-west-1.amazonaws.com/kinoweekend/images/acter.jpg" class="thumbnail" title="look ma!" target="_blank">
+            {% thumbnail "https://s3-eu-west-1.amazonaws.com/kinoweekend/images/acter.jpg" "260x180" crop="80% top" as im %}
+              <img src="{{ im.url }}" alt="Актер">
+            {% endthumbnail %}
+            </a>
+          </li>
+        </ul>
+    </div>
+    <div class="my_article">
+        Дмитрий Паламарчук, актер театра и кино, расскажет тонкости работы над <strong>ИГРОВЫМ КИНО</strong> и взаимодействию режиссера с командой.
+        <br/> 
+        <br/> 
+        Хочешь снять <strong>ИГРОВОЕ</strong> кино, но не знаешь как найти общий язык с <strong>АКТЕРАМИ</strong>?
+        <br/>
+        Или ты - актер и хочешь продуктивнее работать с <strong>РЕЖИССЕРАМИ</strong>?
+        <br/>
+        <br/>
+        Приходи и узнай 5 эффективных методов работы в съемочной команде и <strong>СНИМИ СВОЙ ФИЛЬМ</strong> быстро и качественно! 
+        <br/>
+        <br/>
+        <span class="label label-info">ПРОГРАММА МАСТЕР-КЛАССА:</span>
+        <ol class="my_columns">
+            <li>Анализ сценария, характера персонажей, развитие образа.</li>
+            <li>Пробы, кастинг.</li>
+            <li>Техника работы с актерами.</li>
+            <li>Специфика работы на камеру.</li>
+            <li>Наиболее частые проблемы на репетициях и съемках и их решения.</li>
+        </ol>
+        <div class="alert alert-success">
+            <p style="text-indent:0px;">Подробнее о мастер-классе и регистрация: <a href="http://vk.com/event38713854"><strong>Вконтакте</strong></a></p>
+        </div>
+    </div>
+    <hr/>
+
+    <div class="article-header">
+        <h3><a name="2"></a>
+            МАСТЕР-КЛАСС "Как работать со ЗВУКОМ в кино?"
+        </h3>
+        <span class="label label-success">19 мая 19.00-21.00</span>
+    </div>
+
+    <div style="margin-bottom:-20px;">
+        <ul class="thumbnails">
+          <li class="span4">
+            <a href="https://s3-eu-west-1.amazonaws.com/kinoweekend/images/%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9+%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2.jpg" class="thumbnail" title="look ma!" target="_blank">
+            {% thumbnail "https://s3-eu-west-1.amazonaws.com/kinoweekend/images/%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9+%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2.jpg" "260x180" crop="80% top" as im %}
+              <img src="{{ im.url }}" alt="Актер">
+            {% endthumbnail %}
+            </a>
+          </li>
+          <li class="span3">
+            <a href="https://s3-eu-west-1.amazonaws.com/kinoweekend/images/%D0%97%D0%B2%D1%83%D0%BA%D0%BE%D1%80%D0%B5%D0%B6%D0%B8%D1%81%D1%81%D1%83%D1%80%D0%B0.jpg" class="thumbnail" title="look ma!" target="_blank">
+            {% thumbnail "https://s3-eu-west-1.amazonaws.com/kinoweekend/images/%D0%97%D0%B2%D1%83%D0%BA%D0%BE%D1%80%D0%B5%D0%B6%D0%B8%D1%81%D1%81%D1%83%D1%80%D0%B0.jpg" "260x180" crop="80% top" as im %}
+              <img src="{{ im.url }}" alt="Актер">
+            {% endthumbnail %}
+            </a>
+          </li>
+        </ul>
+    </div>
+    <div class="my_article">
+        Дмитрий Васильев, звукорежиссер, член <abbr title="Межрегиональной Ассоциации Звукорежиссеров Кинематографа"><strong>A.F.S.P.</strong></abbr>, расскажет о работе со звуком в кино. Прекрасный шанс узнать как качественно записать и обработать звук для своего фильма!
+        <br/> 
+        <br/> 
+        <span class="label label-info">ПРОГРАММА МАСТЕР-КЛАССА:</span>
+        <ol class="my_columns">
+            <li>Как работает звук в кино, из чего он состоит и какова его роль</li>
+            <li>Как подобрать необходимую технику для съемок фильма и как с ней работать</li>
+            <li>Как записать звук качественно тем оборудованием, которое у вас есть</li>
+            <li>Что такое звуковая драматургия</li>
+            <li>В чем различие звука в игровом, документальном кино и звуке для телевидения</li>
+        </ol>
+        <div class="alert alert-success">
+            <p style="text-indent:0px;">Подробнее о мастер-классе и регистрация: <a href="http://vk.com/club38718618 "><strong>Вконтакте</strong></a></p>
+        </div>
+    </div>
+    <hr/>
+
+    <div class="article-header">
+        <h3><a name="3"></a>
+            МАСТЕР-КЛАСС "Как написать оригинальный СЦЕНАРИЙ для фильма?"
+        </h3>
+        <span class="label label-success">19 мая 14.00-17.00</span>
+    </div>
+
+    <div style="margin-bottom:-20px;">
+        <ul class="thumbnails">
+          <li class="span4">
+            <a href="https://s3-eu-west-1.amazonaws.com/kinoweekend/images/%D0%9E%D0%BB%D1%8C%D0%B3%D0%B0+%D0%94%D0%BE%D0%BD%D0%B5%D1%86.jpg" class="thumbnail" title="look ma!" target="_blank">
+            {% thumbnail "https://s3-eu-west-1.amazonaws.com/kinoweekend/images/%D0%9E%D0%BB%D1%8C%D0%B3%D0%B0+%D0%94%D0%BE%D0%BD%D0%B5%D1%86.jpg" "260x180" crop="80% top" as im %}
+              <img src="{{ im.url }}" alt="Актер">
+            {% endthumbnail %}
+            </a>
+          </li>
+          <li class="span3">
+            <a href="https://s3-eu-west-1.amazonaws.com/kinoweekend/images/%D0%A1%D1%86%D0%B5%D0%BD%D0%B0%D1%80%D0%B8%D1%81%D1%82.jpeg" class="thumbnail" title="look ma!" target="_blank">
+            {% thumbnail "https://s3-eu-west-1.amazonaws.com/kinoweekend/images/%D0%A1%D1%86%D0%B5%D0%BD%D0%B0%D1%80%D0%B8%D1%81%D1%82.jpeg" "260x180" crop="80% top" as im %}
+              <img src="{{ im.url }}" alt="Актер">
+            {% endthumbnail %}
+            </a>
+          </li>
+        </ul>
+    </div>
+    <div class="my_article">
+        Ольга Донец, сценарист и кинодраматург расскажет о специфике создания и особенностях <strong>КИНОСЦЕНАРИЯ</strong>. Как написать историю так,чтобы ее захотелось снять!
+        <br/> 
+        <br/> 
+        <span class="label label-info">ПРОГРАММА МАСТЕР-КЛАССА:</span>
+        <ol class="my_columns">
+            <li>Введение в предмет</li>
+            <li>Понятие и значение структуры сценария </li>
+            <li>Тема, контртема, сверхзадача</li>
+            <li>Конфликт</li>
+            <li>Энергия вовлечения </li>
+            <li>Фабула и сюжет </li>
+            <li>Символ, Миф, Образ</li>
+            <li>Определение жанра</li>
+        </ol>
+        <div class="alert alert-success">
+            <p style="text-indent:0px;">Подробнее о мастер-классе и регистрация: <a href="http://vk.com/event38720646"><strong>Вконтакте</strong></a></p>
+        </div>
+    </div>
+    <hr/>
+
+</div>
+    {% endblock %}
