@@ -7,7 +7,7 @@ from django.core.paginator import Paginator, EmptyPage, InvalidPage
 import urllib2, urlparse, json
 
 def index(request):
-    videos = Video.objects.all()
+    videos = Video.objects.all().order_by('-id')
     for video in videos:
         video.preview = _v_link(video.video_link)
     photo = get_or_none(Report, id=2)
